@@ -1,0 +1,31 @@
+@import "../../../../public/scss/variables";
+@import "../../../../public/scss/mixins";
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  &__avatar {
+    cursor: pointer;
+  }
+}
+
+.notification {
+  position: relative;
+
+  &__icon {
+
+  }
+
+  &__count {
+    position: absolute;
+    top: -10px;
+    right: -8px;
+    @include Font($white, 11px);
+    @include Roboto-Medium;
+    background-color: $red;
+    border-radius: 100px;
+    padding: 1px 4px;
+  }
+}

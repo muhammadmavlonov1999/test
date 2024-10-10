@@ -1,0 +1,16 @@
+<nav class="navigation">
+  <span (click)="onMenuOpen()"
+        class="icon icon-menu navigation__menu-icon"></span>
+  <ul class="navigation__menu menu"
+      [class.menu-open]="openMenu">
+    <div (click)="onMenuClose()"
+         class="navigation__empty"></div>
+    @for (item of menu; track item.name) {
+      <li class="menu__item">
+        <span class="icon {{item.icon}}"></span>
+        <a [routerLink]="item.href"
+           (click)="onMenuClose()">{{item.name}}</a>
+      </li>
+    }
+  </ul>
+</nav>

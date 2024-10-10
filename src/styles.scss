@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../public/scss/fonts";
+@import "../public/scss/mixins";
+@import "../public/scss/variables";
+@import "../public/scss/icons";
+@import "../public/scss/forms";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  outline: none;
+}

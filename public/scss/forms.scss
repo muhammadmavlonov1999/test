@@ -1,0 +1,100 @@
+@import "mixins";
+@import "variables";
+
+.form-control {
+  width: 100%;
+  height: 48px;
+  border-radius: 4px;
+  padding: 14px 16px;
+
+  &::placeholder {
+    @include Font($grey, 14px);
+    @include Roboto-Regular;
+  }
+}
+
+.custom-checkbox {
+  height: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include Font($black-two, 14px, 20px);
+  @include Roboto-Regular;
+  white-space: nowrap;
+  cursor: pointer;
+  padding-left: 44px;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkmark {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $light-grey-two;
+  border-radius: 50%;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: $blue;
+
+  &:after {
+    background-image: url("../icons/check-white.svg");
+  }
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  vertical-align: middle;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  width: 22px;
+  height: 22px;
+  left: 5px;
+  top: 5px;
+  display: inline-block;
+  background-image: url("../icons/check.svg");
+}
+
+@media only screen and (min-width: $mobile-with) {
+  .custom-checkbox {
+    height: 20px;
+    padding-left: 35px;
+
+    .checkmark {
+      width: 20px;
+      height: 20px;
+      background: none;
+      border: 2px solid $dark-grey;
+      border-radius: 3px;
+
+      &:after {
+        width: 12px;
+        height: 12px;
+        left: 2px;
+        top: 3px;
+        background-size: 12px;
+        background-image: none;
+      }
+    }
+
+    input:checked ~ .checkmark {
+      border-color: $blue;
+    }
+  }
+}

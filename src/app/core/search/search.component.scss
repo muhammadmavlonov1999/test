@@ -1,0 +1,189 @@
+@import "../../../../public/scss/variables";
+@import "../../../../public/scss/mixins";
+
+.icon-search {
+  cursor: pointer;
+}
+
+.search-container {
+  width: 0;
+  position: absolute;
+  right: 0;
+  top: -12px;
+  z-index: 10;
+  transition-duration: 1s;
+
+  &__empty {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 8;
+  }
+
+  &-show {
+    width: 100%;
+
+    .search-header__input {
+      padding: 14px 16px;
+    }
+  }
+}
+
+.search-header {
+  position: relative;
+  z-index: 10;
+
+  .icon-arrow-back {
+    display: none;
+  }
+
+  &__input {
+    transition-duration: 1s;
+    padding: 0;
+  }
+}
+
+.search-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  border-radius: 4px;
+  background-color: $white;
+  box-shadow: 0 4px 8px 0 rgba(93, 95, 97, 0.14);
+  margin-top: 2px;
+}
+
+.history {
+  max-width: 228px;
+  width: 100%;
+  border-right: 1px solid $light-grey;
+  padding-top: 20px;
+
+  &__title {
+    @include Font($dark-grey, 11px, 14px);
+    @include Roboto-Regular;
+    border-bottom: 6px;
+    padding-inline: 16px;
+  }
+
+  &__list {
+
+  }
+
+  &__item {
+    @include Font($black-two, 14px, 20px);
+    @include Roboto-Regular;
+    padding: 6px 16px;
+  }
+}
+
+.filter {
+  flex: 1;
+  padding: 24px;
+}
+
+.author {
+  border-radius: 5px;
+  border: 1px solid $light-grey;
+  padding-right: 12px;
+  margin-bottom: 25px;
+
+  &__label {
+    position: relative;
+    z-index: 1;
+    @include Font($grey, 12px, 16px);
+    @include Roboto-Medium;
+    padding-inline: 4px;
+    margin-left: 12px;
+  }
+
+  &__inputs-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: -7px;
+  }
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-left: 12px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    @include Font($black-two, 14px, 20px);
+    @include Roboto-Regular;
+    white-space: nowrap;
+  }
+
+  &__checkbox {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.tags {
+  margin-top: 28px;
+
+  &__title {
+    @include Font($black, 14px, 20px);
+    @include Roboto-Regular;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: $mobile-with) {
+  .search-container {
+    display: none;
+
+    &-show {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      background-color: $white;
+    }
+  }
+
+  .search-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 16px 16px 0;
+
+    .icon-arrow-back {
+      display: inline-block;
+    }
+
+    &__input {
+      border-radius: 24px;
+      background-color: $light-grey-two;
+      padding: 14px 16px;
+    }
+  }
+
+  .search-content {
+    box-shadow: none;
+  }
+
+  .history {
+    display: none;
+  }
+
+  .filter {
+    padding: 24px 16px;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,57 @@
+.icon {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  vertical-align: middle;
+  display: inline-block;
+
+  &.icon-add {
+    background-image: url("../icons/add.svg");
+  }
+
+  &.icon-contacts {
+    background-image: url("../icons/contacts.svg");
+  }
+
+  &.icon-favorites {
+    background-image: url("../icons/favorites.svg");
+  }
+
+  &.icon-history {
+    background-image: url("../icons/history.svg");
+  }
+
+  &.icon-link {
+    background-image: url("../icons/link.svg");
+  }
+
+  &.icon-notification {
+    background-image: url("../icons/notification.svg");
+  }
+
+  &.icon-search {
+    background-image: url("../icons/search.svg");
+  }
+
+  &.icon-tag {
+    background-image: url("../icons/tag.svg");
+  }
+
+  &.icon-me {
+    background-image: url("../icons/me.svg");
+  }
+
+  &.icon-menu {
+    background-image: url("../icons/menu.svg");
+  }
+
+  &.icon-arrow-back {
+    background-image: url("../icons/arrow_back.svg");
+  }
+
+  &.icon-check {
+    background-image: url("../icons/check.svg");
+  }
+}

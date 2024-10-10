@@ -1,0 +1,59 @@
+@import "../../../../public/scss/variables";
+
+.header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: $blue;
+  padding-inline: 16px;
+
+  &__logo {
+    cursor: pointer;
+  }
+
+  &__menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__add-icon {
+    cursor: pointer;
+  }
+
+  &__mobile-icons {
+    display: none;
+  }
+
+  &__profile {
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: $mobile-with) {
+  .header {
+    &__menu {
+      order: -1;
+
+      app-search {
+        display: none;
+      }
+    }
+
+    &__add-icon {
+      margin-left: 12px;
+    }
+
+    &__mobile-icons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__profile {
+      display: none;
+    }
+  }
+}

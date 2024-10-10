@@ -1,0 +1,49 @@
+@mixin Roboto-Black {
+  font-family: 'Roboto Black', sans-serif;
+}
+
+@mixin Roboto-BlackItalic {
+  font-family: 'Roboto BlackItalic', sans-serif;
+}
+
+@mixin Roboto-Bold {
+  font-family: 'Roboto Bold', sans-serif;
+}
+
+@mixin Roboto-BoldItalic {
+  font-family: 'Roboto BoldItalic', sans-serif;
+}
+
+@mixin Roboto-Italic {
+  font-family: 'Roboto Italic', sans-serif;
+}
+
+@mixin Roboto-Light {
+  font-family: 'Roboto Light', sans-serif;
+}
+
+@mixin Roboto-Medium {
+  font-family: 'Roboto Medium', sans-serif;
+}
+
+@mixin Roboto-MediumItalic {
+  font-family: 'Roboto MediumItalic', sans-serif;
+}
+
+@mixin Roboto-Regular {
+  font-family: 'Roboto Regular', sans-serif;
+}
+
+@mixin Roboto-Thin {
+  font-family: 'Roboto Thin', sans-serif;
+}
+
+@mixin Roboto-ThinItalic {
+  font-family: 'Roboto ThinItalic', sans-serif;
+}
+
+@mixin Font($color, $size, $line-height: normal) {
+  color: $color;
+  font-size: $size;
+  line-height: $line-height;
+}

@@ -1,0 +1,75 @@
+<div>
+  <span (click)="onSearchOpen()"
+        class="icon icon-search"></span>
+  <div class="search-container"
+       [class.search-container-show]="openSearch">
+    @if (openSearch) {
+      <div (click)="closeAllDropdowns()"
+           class="search-container__empty"></div>
+    }
+    <div class="search-container__header search-header">
+      <span (click)="closeAllDropdowns()"
+            class="icon icon-arrow-back"></span>
+      <input type="text"
+             class="form-control search-header__input"
+             (focus)="onDropdownOpen()"
+             placeholder="Поисковый запрос">
+    </div>
+    @if (openDropdown) {
+      <div class="search-container__content search-content">
+        <div class="search-content__history history">
+          <h5 class="history__title">История</h5>
+          <div class="history__list">
+            @for (history of histories; track history.name) {
+              <p class="history__item">{{ history.name }}</p>
+            }
+          </div>
+        </div>
+        <div class="search-content__filter filter">
+          <fieldset class="filter__author author">
+            <legend class="author__label">Автор</legend>
+            <div class="author__inputs-group">
+              <input type="text"
+                     class="form-control author__input"
+                     placeholder="Имя или должность">
+              <span class="icon icon-me"></span>
+            </div>
+          </fieldset>
+
+          <div class="filter__checkbox-group checkbox-group">
+            <label class="custom-checkbox">Я участник
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-checkbox">Строгий поиск
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-checkbox">В заголовках
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="filter__tags tags">
+            <h3 class="tags__title">Только</h3>
+
+            <div class="filter__checkbox-group checkbox-group">
+              <label class="custom-checkbox">Теги
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox">Просьбы
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox">Контакты
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
